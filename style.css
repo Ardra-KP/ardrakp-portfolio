@@ -151,3 +151,23 @@ h2 {
   .hero-img { margin-top: 30px; }
   nav ul { flex-direction: column; }
 }
+/* Navbar fix */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #ff5722;
+}
