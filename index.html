@@ -4,31 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ardra K P - Python Developer | Django | REST APIs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  
     <style>
     :root {
         --primary: #ff5722;
-        --secondary: #667eea;
-        --dark: #1f2937;
-        --light: #f9fafb;
+        --secondary: #4F46E5;
+        --dark: #111827;
+        --light: #F9FAFB;
     }
     
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; color: #374151; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-      color: #333;
-      line-height: 1.7;
-    }
-
-    /* NAVBAR */
+    /* NAVBAR - MOBILE FRIENDLY */
     nav {
       background: #fff;
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
@@ -36,7 +26,6 @@
       top: 0;
       z-index: 1000;
     }
-
     nav .container {
       display: flex;
       justify-content: space-between;
@@ -45,232 +34,101 @@
       max-width: 1200px;
       margin: auto;
     }
+    .logo { font-size: 24px; font-weight: 800; color: var(--primary); }
+    nav ul { display: flex; gap: 35px; list-style: none; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: 0.3s; }
+    nav ul li a:hover { color: var(--primary); }
+    
+    .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: var(--primary);
-    }
-
-    /* HERO */
+    /* HERO - PREMIUM */
     #home {
+        min-height: 90vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 120px 20px;
-        background: linear-gradient(135deg, var(--secondary) 0%, #764ba2 100%);
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
-        gap: 40px;
+        gap: 60px;
     }
-
     .hero-text { flex: 1; }
     .hero-img { flex: 1; text-align: center; }
-
-    #home h1 {
-        font-size: 48px;
-        margin-bottom: 15px;
-        font-weight: 700;
-    }
-
-    #home p {
-        font-size: 20px;
-        margin-bottom: 30px;
-        opacity: 0.9;
-    }
-
+    #home h1 { font-size: 52px; margin-bottom: 20px; font-weight: 800; line-height: 1.2; }
+    #home p { font-size: 22px; margin-bottom: 35px; opacity: 0.9; }
     .hero-img img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      border: 5px solid var(--primary);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 280px; height: 280px; border-radius: 50%; 
+      border: 6px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
-
     .btn {
-        background: var(--primary);
-        color: white !important;
-        padding: 14px 32px;
-        text-decoration: none;
-        border-radius: 8px;
-        display: inline-block;
-        font-weight: 600;
-        transition: 0.3s;
-        box-shadow: 0 4px 15px rgba(255,87,34,0.3);
+        background: var(--primary); color: white !important; padding: 16px 35px;
+        text-decoration: none; border-radius: 50px; display: inline-block;
+        font-weight: 700; font-size: 16px; transition: 0.3s;
+        box-shadow: 0 8px 25px rgba(255,87,34,0.4);
     }
-    
-    .btn:hover {
-        background: #e64a19;
-        transform: translateY(-3px);
-    }
+    .btn:hover { transform: translateY(-3px) scale(1.05); }
 
     /* SECTIONS */
-    section {
-        padding: 80px 20px;
-        max-width: 1200px;
-        margin: auto;
-    }
-    
+    section { padding: 100px 20px; max-width: 1200px; margin: auto; }
     section h2 {
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 50px;
-        color: var(--dark);
-        position: relative;
+        text-align: center; font-size: 40px; margin-bottom: 60px; color: var(--dark);
+        font-weight: 700; position: relative;
     }
-    
     section h2::after {
-        content: '';
-        width: 60px;
-        height: 4px;
-        background: var(--primary);
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
+        content: ''; width: 80px; height: 4px; background: var(--primary);
+        position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 2px;
     }
 
     /* SKILLS */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 20px;
-    }
-
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; }
     .skill-item {
-        background: var(--light);
-        padding: 15px;
-        text-align: center;
-        border-radius: 10px;
-        font-weight: 600;
-        border: 2px solid transparent;
-        transition: 0.3s;
+        background: var(--light); padding: 20px; text-align: center; border-radius: 12px;
+        font-weight: 600; border: 2px solid #e5e7eb; transition: 0.3s;
     }
-    
-    .skill-item:hover {
-        border-color: var(--primary);
-        transform: translateY(-5px);
-    }
+    .skill-item:hover { border-color: var(--primary); transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
     /* PROJECTS */
     .project-card {
-        border: 1px solid #e5e7eb;
-        padding: 30px;
-        margin: 30px 0;
-        border-radius: 12px;
-        background: #fff;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        transition: 0.3s;
+        border: 1px solid #e5e7eb; padding: 35px; margin: 40px 0; border-radius: 16px;
+        background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.06); transition: 0.4s;
     }
-    
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    .project-card h3 {
-        color: var(--secondary);
-        margin-bottom: 12px;
-        font-size: 22px;
-    }
-    
-    .project-card ul { margin-top: 15px; padding-left: 20px; }
-    .project-card ul li { margin-bottom: 8px; }
-
+    .project-card:hover { transform: translateY(-10px); }
+    .project-card h3 { color: var(--secondary); margin-bottom: 15px; font-size: 24px; }
     .project-buttons a {
-        display: inline-block;
-        background: var(--primary);
-        color: white !important;
-        padding: 10px 22px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14px;
-        margin-right: 12px;
-        margin-top: 15px;
-        transition: 0.3s;
+        display: inline-block; background: var(--primary); color: white !important;
+        padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600;
+        margin-right: 15px; margin-top: 20px; transition: 0.3s;
     }
-    
-    .project-buttons a:hover {
-        background: #e64a19;
-    }
-    
-    .project-buttons a i { margin-right: 6px; }
+    .project-buttons a:hover { background: #e64a19; }
 
     /* CONTACT */
-    #contact {
-        background: var(--light);
-        text-align: center;
-    }
-    
-    .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-    
+    #contact { background: var(--light); }
+    .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
     .contact-item {
-        font-size: 16px;
+        background: white; padding: 25px; border-radius: 12px; text-align: center;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05); font-size: 16px;
     }
-    
-    .contact-item i {
-        color: var(--primary);
-        margin-right: 8px;
-    }
+    .contact-item i { color: var(--primary); font-size: 24px; margin-bottom: 10px; display: block; }
 
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 25px;
-        background: var(--dark);
-        color: white;
-    }
+    footer { text-align: center; padding: 30px; background: var(--dark); color: white; }
 
     /* MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-      nav ul {
-        gap: 15px;
-        font-size: 14px;
-      }
-      .logo { font-size: 20px; }
-      
-      #home {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 20px;
-      }
-      #home h1 { font-size: 32px; }
-      #home p { font-size: 16px; }
-      .hero-img img { width: 160px; height: 160px; }
-      
-      section { padding: 50px 20px; }
-      section h2 { font-size: 28px; }
-      
-      .contact-info { flex-direction: column; gap: 15px; }
+    @media (max-width: 992px) {
+      #home { flex-direction: column; text-align: center; padding: 60px 20px; }
+      #home h1 { font-size: 38px; }
+      .hero-img img { width: 200px; height: 200px; margin-top: 30px; }
     }
-    
-    @media (max-width: 480px) {
-        nav ul { gap: 10px; }
-        .project-buttons a { display: block; margin-bottom: 10px; }
+    @media (max-width: 768px) {
+      nav ul { 
+        position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+        background: white; flex-direction: column; align-items: center; padding-top: 50px;
+        transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      nav ul.active { left: 0; }
+      .menu-toggle { display: block; }
+      section { padding: 60px 20px; }
+      section h2 { font-size: 32px; }
+      .project-buttons a { display: block; margin-bottom: 12px; text-align: center; }
     }
     </style>
 </head>
@@ -280,13 +138,14 @@
     <nav>
       <div class="container">
         <div class="logo">Ardra KP</div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul id="nav-menu">
+          <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
       </div>
     </nav>
 
@@ -294,7 +153,7 @@
         <div class="hero-text">
             <h1>Hi, I'm Ardra K P</h1>
             <p>Python Developer | Django | REST APIs</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <a href="#projects" class="btn">View My Work <i class="fa-solid fa-arrow-down"></i></a>
         </div>
         <div class="hero-img">
             <img src="images/ardra.jpg" alt="Ardra K P">
@@ -303,38 +162,30 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        I'm a <b>Python Developer</b> specializing in Django and REST API development. 
-        I love building scalable backend systems and web applications that solve real business problems.
-      </p>
-      <p>
-        Over the past few years, I've deployed 3+ production applications using Django, AWS, and Docker. 
-        In my project <b>Last Call Eats</b>, I reduced food waste by 30% for 20+ businesses and achieved 99.9% uptime. 
-        I'm passionate about clean code, performance optimization, and delivering products that users love.
-      </p>
+      <p>I'm a <b>Python Developer</b> specializing in Django and REST API development. I love building scalable backend systems and web applications that solve real business problems.</p>
+      <p>Over the past few years, I've deployed 3+ production applications using Django, AWS, and Docker. In my project <b>Last Call Eats</b>, I reduced food waste by 30% for 20+ businesses and achieved 99.9% uptime.</p>
     </section>
 
     <section id="skills">
         <h2>Technical Skills</h2>
         <div class="skills-grid">
-            <div class="skill-item">Python</div>
+            <div class="skill-item"><i class="fa-brands fa-python"></i> Python</div>
             <div class="skill-item">Django</div>
             <div class="skill-item">Django REST</div>
             <div class="skill-item">REST APIs</div>
             <div class="skill-item">PostgreSQL</div>
             <div class="skill-item">MySQL</div>
-            <div class="skill-item">AWS</div>
-            <div class="skill-item">Docker</div>
+            <div class="skill-item"><i class="fa-brands fa-aws"></i> AWS</div>
+            <div class="skill-item"><i class="fa-brands fa-docker"></i> Docker</div>
             <div class="skill-item">HTML / CSS / JS</div>
-            <div class="skill-item">React.js</div>
-            <div class="skill-item">Git / GitHub</div>
+            <div class="skill-item"><i class="fa-brands fa-react"></i> React.js</div>
+            <div class="skill-item"><i class="fa-brands fa-git-alt"></i> Git / GitHub</div>
             <div class="skill-item">Celery & Redis</div>
         </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-
         <div class="project-card">
             <h3>1. Last Call Eats - Food Ordering Platform</h3>
             <p><b>Tech:</b> Django, PostgreSQL, AWS, Docker, Celery</p>
@@ -342,13 +193,8 @@
                 <a href="https://lastcalleatsweb.pythonanywhere.com" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a> 
                 <a href="https://github.com/Ardra-KP/lastcalleats" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-            <ul>
-                <li>Built Django REST APIs with Celery async tasks, reducing food waste by 30% for 20+ businesses</li>
-                <li>Implemented JWT auth and Redis caching, cutting API response time by 35%</li>
-                <li>Deployed on AWS EC2 with Docker/Nginx, 99.9% uptime</li>
-            </ul>
+            <ul><li>Reduced food waste by 30% for 20+ businesses</li><li>Cut API response time by 35% with Redis caching</li><li>99.9% uptime on AWS EC2 with Docker</li></ul>
         </div>
-
         <div class="project-card">
             <h3>2. Amokh Veda - E-Learning Platform</h3>
             <p><b>Tech:</b> Django, SQLite, AWS S3, Razorpay</p>
@@ -356,18 +202,6 @@
                 <a href="https://amokhaayur.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a> 
                 <a href="https://github.com/Ardra-KP/amokhveda-django" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-            <ul>  
-                <li>E-learning platform with course videos and payment integration</li>
-            </ul>
-        </div>
-
-        <div class="project-card">
-            <h3>3. Blood Bank Management System</h3>
-            <p><b>Tech:</b> Django, MySQL, REST API</p>
-            <ul>
-                <li>Built REST APIs for donor-recipient matching with real-time availability</li>
-                <li>Optimized MySQL queries, improving search speed by 50%</li>
-            </ul>
         </div>
     </section>
 
@@ -381,9 +215,12 @@
         </div>
     </section>
         
-    <footer>
-        © 2026 Ardra K P. All rights reserved.
-    </footer>
+    <footer>© 2026 Ardra K P. All rights reserved.</footer>
 
+    <script>
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
+    </script>
 </body>
 </html>
