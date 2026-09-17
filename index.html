@@ -6,133 +6,46 @@
     <title>Ardra K P - Python Developer | Django | REST APIs</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- 
     <style>
-    :root {
-        --primary: #ff5722;
-        --secondary: #4F46E5;
-        --dark: #111827;
-        --light: #F9FAFB;
-    }
-    
+    :root { --primary: #ff5722; --secondary: #4F46E5; --dark: #111827; --light: #F9FAFB; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; color: #374151; }
-
-    /* NAVBAR - MOBILE FRIENDLY */
-    nav {
-      background: #fff;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+    nav { background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; max-width: 1200px; margin: auto; }
     .logo { font-size: 24px; font-weight: 800; color: var(--primary); }
     nav ul { display: flex; gap: 35px; list-style: none; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: 0.3s; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 600; }
     nav ul li a:hover { color: var(--primary); }
-    
     .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
-
-    /* HERO - PREMIUM */
-    #home {
-        min-height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 80px 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        gap: 60px;
-    }
-    .hero-text { flex: 1; }
-    .hero-img { flex: 1; text-align: center; }
+    #home { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 80px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; gap: 60px; }
+    .hero-text { flex: 1; } .hero-img { flex: 1; text-align: center; }
     #home h1 { font-size: 52px; margin-bottom: 20px; font-weight: 800; line-height: 1.2; }
     #home p { font-size: 22px; margin-bottom: 35px; opacity: 0.9; }
-    .hero-img img {
-      width: 280px; height: 280px; border-radius: 50%; 
-      border: 6px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
-    .btn {
-        background: var(--primary); color: white !important; padding: 16px 35px;
-        text-decoration: none; border-radius: 50px; display: inline-block;
-        font-weight: 700; font-size: 16px; transition: 0.3s;
-        box-shadow: 0 8px 25px rgba(255,87,34,0.4);
-    }
+    .hero-img img { width: 280px; height: 280px; border-radius: 50%; border: 6px solid white; box-shadow: 0 20px 50px rgba(0,0,0,0.3); object-fit: cover; }
+    .btn { background: var(--primary); color: white !important; padding: 16px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700; font-size: 16px; transition: 0.3s; box-shadow: 0 8px 25px rgba(255,87,34,0.4); }
     .btn:hover { transform: translateY(-3px) scale(1.05); }
-
-    /* SECTIONS */
     section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-    section h2 {
-        text-align: center; font-size: 40px; margin-bottom: 60px; color: var(--dark);
-        font-weight: 700; position: relative;
-    }
-    section h2::after {
-        content: ''; width: 80px; height: 4px; background: var(--primary);
-        position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 2px;
-    }
-
-    /* SKILLS */
+    section h2 { text-align: center; font-size: 40px; margin-bottom: 60px; color: var(--dark); font-weight: 700; position: relative; }
+    section h2::after { content: ''; width: 80px; height: 4px; background: var(--primary); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 2px; }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; }
-    .skill-item {
-        background: var(--light); padding: 20px; text-align: center; border-radius: 12px;
-        font-weight: 600; border: 2px solid #e5e7eb; transition: 0.3s;
-    }
+    .skill-item { background: var(--light); padding: 20px; text-align: center; border-radius: 12px; font-weight: 600; border: 2px solid #e5e7eb; transition: 0.3s; }
     .skill-item:hover { border-color: var(--primary); transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-    /* PROJECTS */
-    .project-card {
-        border: 1px solid #e5e7eb; padding: 35px; margin: 40px 0; border-radius: 16px;
-        background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.06); transition: 0.4s;
-    }
+    .project-card { border: 1px solid #e5e7eb; padding: 35px; margin: 40px 0; border-radius: 16px; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.06); transition: 0.4s; }
     .project-card:hover { transform: translateY(-10px); }
     .project-card h3 { color: var(--secondary); margin-bottom: 15px; font-size: 24px; }
-    .project-buttons a {
-        display: inline-block; background: var(--primary); color: white !important;
-        padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600;
-        margin-right: 15px; margin-top: 20px; transition: 0.3s;
-    }
-    .project-buttons a:hover { background: #e64a19; }
-
-    /* CONTACT */
+    .project-card p { line-height: 1.7; }
+    .project-buttons a { display: inline-block; background: var(--primary); color: white !important; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 15px; margin-top: 20px; transition: 0.3s; }
+    .project-buttons a.github { background: var(--dark); }
     #contact { background: var(--light); }
     .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-    .contact-item {
-        background: white; padding: 25px; border-radius: 12px; text-align: center;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05); font-size: 16px;
-    }
+    .contact-item { background: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); font-size: 16px; }
     .contact-item i { color: var(--primary); font-size: 24px; margin-bottom: 10px; display: block; }
-
+    .contact-item a { text-decoration: none; color: #333; font-weight: 600; }
     footer { text-align: center; padding: 30px; background: var(--dark); color: white; }
-
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 992px) {
-      #home { flex-direction: column; text-align: center; padding: 60px 20px; }
-      #home h1 { font-size: 38px; }
-      .hero-img img { width: 200px; height: 200px; margin-top: 30px; }
-    }
-    @media (max-width: 768px) {
-      nav ul { 
-        position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
-        background: white; flex-direction: column; align-items: center; padding-top: 50px;
-        transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
-      nav ul.active { left: 0; }
-      .menu-toggle { display: block; }
-      section { padding: 60px 20px; }
-      section h2 { font-size: 32px; }
-      .project-buttons a { display: block; margin-bottom: 12px; text-align: center; }
-    }
+    @media (max-width: 992px) { #home { flex-direction: column; text-align: center; padding: 60px 20px; } #home h1 { font-size: 38px; } .hero-img img { width: 200px; height: 200px; margin-top: 30px; } }
+    @media (max-width: 768px) { nav ul { position: fixed; top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px); background: white; flex-direction: column; align-items: center; padding-top: 50px; transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.1); } nav ul.active { left: 0; } .menu-toggle { display: block; } section { padding: 60px 20px; } section h2 { font-size: 32px; } .project-buttons a { display: block; margin-bottom: 12px; text-align: center; } }
     </style>
 </head>
-  
 <body>
 
     <nav>
@@ -162,8 +75,8 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>I'm a <b>Python Developer</b> specializing in Django and REST API development. I love building scalable backend systems and web applications that solve real business problems.</p>
-      <p>Over the past few years, I've deployed 3+ production applications using Django,and AWS. In my project <b>Last Call Eats</b>, I reduced food waste by 30% for 20+ businesses and achieved 99.9% uptime.</p>
+      <p>I'm a <b>Python Developer</b> specializing in Django and REST API development. I love building scalable backend systems and web applications that solve real business problems.</p><br>
+      <p>Recently built <b>SkillSync</b> – a freelancing platform with role-based auth and deployed live. Over the past years, I've deployed 3+ production applications using Django and AWS, including <b>Last Call Eats</b> which reduced food waste by 30% and achieved 99.9% uptime.</p>
     </section>
 
     <section id="skills">
@@ -176,7 +89,7 @@
             <div class="skill-item">PostgreSQL</div>
             <div class="skill-item">MySQL</div>
             <div class="skill-item"><i class="fa-brands fa-aws"></i> AWS</div>
-            <div class="skill-item">HTML / CSS / JS</div>
+            <div class="skill-item">Tailwind CSS</div>
             <div class="skill-item"><i class="fa-brands fa-react"></i> React.js</div>
             <div class="skill-item"><i class="fa-brands fa-git-alt"></i> Git / GitHub</div>
             <div class="skill-item">Celery & Redis</div>
@@ -185,23 +98,52 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-card">
-            <h3>1. Last Call Eats - Food Ordering Platform</h3>
-            <p><b>Tech:</b> Django, PostgreSQL, AWS, Docker, Celery</p>
+        
+        <div class="project-card" style="border-left: 5px solid #ff5722;">
+            <h3>1. SkillSync - Freelancing Platform [Latest Live]</h3>
+            <p><b>Tech:</b> Python, Django, Tailwind CSS, SQLite, PythonAnywhere</p>
+            <p style="margin-top:10px;">Modern freelancing platform where clients post projects and connect with skilled freelancers. Built end-to-end from scratch with clean, responsive UI.</p>
+            <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+                <li>Role-based Authentication (Client / Freelancer)</li>
+                <li>Post & Manage Projects, Dynamic Dashboard</li>
+                <li>Modern & Responsive UI with Tailwind CSS</li>
+            </ul>
             <div class="project-buttons">
-                <a href="https://lastcalleatsweb.pythonanywhere.com" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a> 
-                <a href="https://github.com/Ardra-KP/lastcalleats" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://skillsync.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a>
+                <a href="https://github.com/Ardra-KP/SkillSync" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
-            <ul><li>Reduced food waste by 30% for 20+ businesses</li><li>Cut API response time by 35% with Redis caching</li>
         </div>
+
         <div class="project-card">
-            <h3>2. Amokh Veda - E-Learning Platform</h3>
+            <h3>2. Last Call Eats - Food Ordering Platform</h3>
+            <p><b>Tech:</b> Django, PostgreSQL, AWS, Docker, Celery, Redis</p>
+            <p style="margin-top:10px;">Platform to reduce food waste by connecting businesses with customers for surplus food sales.</p>
+            <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+                <li>Reduced food waste by 30% for 20+ businesses</li>
+                <li>Cut API response time by 35% with Redis caching</li>
+                <li>99.9% uptime on AWS</li>
+            </ul>
+            <div class="project-buttons">
+                <a href="https://lastcalleatsweb.pythonanywhere.com" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a>
+                <a href="https://github.com/Ardra-KP/lastcalleats" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>3. Amokh Veda - E-Learning Platform</h3>
             <p><b>Tech:</b> Django, SQLite, AWS S3</p>
+            <p style="margin-top:10px;">E-learning platform for Ayurveda courses with video content and secure file storage.</p>
+            <ul style="margin-top:15px; padding-left:20px; line-height:1.8;">
+                <li>Integrated AWS S3 for secure video & file storage</li>
+                <li>User authentication and course management system</li>
+                <li>Deployed with responsive UI</li>
+            </ul>
             <div class="project-buttons">
-                <a href="https://amokhaayur.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a> 
-                <a href="https://github.com/Ardra-KP/amokhveda-django" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://amokhaayur.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link"></i> Live Demo</a>
+                <a href="https://github.com/Ardra-KP/amokhveda-django" target="_blank" class="github"><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
         </div>
+
     </section>
 
     <section id="contact">
